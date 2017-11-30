@@ -11,9 +11,9 @@
  */
 
 /**
- * @subpackage WPReactivate
+ * @subpackage HRSpeedTest
  */
-class WPR_Widget extends WP_Widget {
+class HRP_Widget extends WP_Widget {
 
 	/**
 	 * Initialize the widget
@@ -21,15 +21,15 @@ class WPR_Widget extends WP_Widget {
 	 * @since 0.8.0
 	 */
 	public function __construct() {
-		$plugin = WPReactivate::get_instance();
+		$plugin = HRSpeedTest::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 		$this->version = $plugin->get_plugin_version();
 
 		$widget_ops = array(
-			'description' => esc_html__( 'WP Reactivate demo widget.', 'wp-reactivate' ),
+			'description' => esc_html__( 'HR Speed Test demo widget.', 'hr-speedtest' ),
 		);
 
-		parent::__construct( 'wpr-widget', esc_html__( 'WP Reactivate', 'wp-reactivate' ), $widget_ops );
+		parent::__construct( 'hrs-widget', esc_html__( 'HR Speed Test', 'hr-speedtest' ), $widget_ops );
 	}
 
 	/**
@@ -39,22 +39,22 @@ class WPR_Widget extends WP_Widget {
 	 * @param array $instance
 	 */
 	public function widget( $args, $instance ) {
-		wp_enqueue_script( $this->plugin_slug . '-widget-script', plugins_url( 'assets/js/widget.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->version );
-		wp_enqueue_style( $this->plugin_slug . '-widget-style', plugins_url( 'assets/css/widget.css', dirname( __FILE__ ) ), $this->version );
+		//wp_enqueue_script( $this->plugin_slug . '-widget-script', plugins_url( 'assets/js/widget.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->version );
+		//wp_enqueue_style( $this->plugin_slug . '-widget-style', plugins_url( 'assets/css/widget.css', dirname( __FILE__ ) ), $this->version );
 
-		$object_name = 'wpr_object_' . uniqid();
+		$object_name = 'hrs_object_' . uniqid();
 
 		$object = array(
 			'title'       => $instance['title'],
 			'api_nonce'   => wp_create_nonce( 'wp_rest' ),
-			'api_url'	  => site_url( '/wp-json/wp-reactivate/v1/' ),
+			'api_url'	  => site_url( '/wp-json/hr-speedtest/v1/' ),
 		);
 
 		wp_localize_script( $this->plugin_slug . '-widget-script', $object_name, $object );
 
 		echo $args['before_widget'];
 
-		?><div class="wp-reactivate-widget" data-object-id="<?php echo $object_name ?>"></div><?php
+		?><div class="hr-speedtest-widget" data-object-id="<?php echo $object_name ?>"></div><?php
 
 		echo $args['after_widget'];
 	}
@@ -70,7 +70,7 @@ class WPR_Widget extends WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
-				<?php esc_html_e( 'Title:', 'wp-reactivate' ); ?>
+				<?php esc_html_e( 'Title:', 'hr-speedtest' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>

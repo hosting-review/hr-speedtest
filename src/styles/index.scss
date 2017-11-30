@@ -1,0 +1,119 @@
+@import "./custom.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$flag-icon-css-path: "../../node_modules/flag-icon-css/flags";
+
+@import "../../node_modules/flag-icon-css/sass/flag-icon.scss";
+
+$select-input-border-radius: 0;
+$select-input-height: 38px;
+@import "../../node_modules/react-select-plus/scss/select.scss";
+@import "../../node_modules/react-select-plus/scss/components.scss";
+
+.shadow-box {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+  background-color: #ffffff;
+  padding: 26px 30px;
+}
+
+.web-speed-test-wrapper .btn {
+  font-family: inherit;
+}
+
+.web-speed-test-wrapper .badge {
+  font-weight: 400;
+  font-size: 13px;
+  width: 37px;
+  height: 37px;
+  line-height: 37px;
+  vertical-align: middle;
+}
+
+.web-speed-test-wrapper .zoom-in:hover {
+  cursor: zoom-in;
+}
+
+.web-speed-test-wrapper .zoom-out:hover {
+  cursor: zoom-out;
+}
+
+.results-scalar-data p {
+  margin-bottom: 0;
+  line-height: 37px;
+  font-size: 13px;
+}
+
+.speed-grade p span + span {
+  margin-left: 5px;
+}
+
+.Select-menu-outer {
+  min-width: 100%;
+  width: auto;
+}
+
+.Select-option {
+  white-space: nowrap;
+}
+
+.Select-option-group-label {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #666666;
+  font-weight: bold;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+}
+
+.Select-option-group-label ~ .Select-option,
+.Select-option-group-label ~ .Select-option-group {
+  padding-left: 20px;
+}
+
+.recent-tests-color {
+  color: $gray-600;
+}
+
+a.recent-tests-color:hover {
+  color: $gray-800;
+  text-decoration: none;
+}
+
+.results-scalar-data {
+  p {
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+}
+
+.speed-grade {
+  [data-grade] {
+    font-size: 24px;
+  }
+  [data-grade="A"] {
+    background-color: #09B01A;
+  }
+  [data-grade="B"] {
+    background-color: #83A61E;
+  }
+  [data-grade="C"] {
+    background-color: #FEC609;
+  }
+  [data-grade="D"] {
+    background-color: #E2721F;
+  }
+  [data-grade="E"] {
+    background-color: #E44235;
+  }
+  [data-grade="F"] {
+    background-color: #B83226;
+  }
+}
+
+.web-speed-test-wrapper {
+  .row:before, .row:after {
+    display: none;
+  }
+}

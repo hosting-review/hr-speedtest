@@ -1,0 +1,216 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HR Speed Test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-22 17:16+0000\n"
+"PO-Revision-Date: 2017-11-24 03:01+0000\n"
+"Last-Translator: Willisk <willis@webhostingterbaik.id>\n"
+"Language-Team: Indonesian\n"
+"Language: id-ID\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: includes/class-wpr-shortcode.php:94
+msgid "Recent Tests"
+msgstr "Test Terbaru"
+
+#: includes/class-wpr-shortcode.php:95
+msgid "months"
+msgstr "bulan"
+
+#: includes/class-wpr-shortcode.php:96
+msgid "days"
+msgstr "hari"
+
+#: includes/class-wpr-shortcode.php:97
+msgid "hours"
+msgstr "jam"
+
+#: includes/class-wpr-shortcode.php:98
+msgid "minutes"
+msgstr "menit"
+
+#: includes/class-wpr-shortcode.php:99
+msgid "seconds"
+msgstr "detik"
+
+#: includes/class-wpr-shortcode.php:100
+msgid "URL is not fully qualified domain name"
+msgstr "URL tidak memenuhi syarat nama domain"
+
+#: includes/class-wpr-shortcode.php:101
+msgid "URL is required"
+msgstr "URL dibutuhkan"
+
+#: includes/class-wpr-shortcode.php:102
+msgid "Enter a Website URL"
+msgstr "Masukkan alamat website"
+
+#: includes/class-wpr-shortcode.php:103
+msgid "Cancel"
+msgstr "Batal"
+
+#: includes/class-wpr-shortcode.php:104
+msgid "Check"
+msgstr "Cek"
+
+#: includes/class-wpr-shortcode.php:105
+msgid "Click to see website"
+msgstr "Klik untuk melihat website"
+
+#: includes/class-wpr-shortcode.php:106
+msgid "ago"
+msgstr "yang lalu"
+
+#: includes/class-wpr-shortcode.php:107
+msgid "Test from"
+msgstr "Test dari"
+
+#: includes/class-wpr-shortcode.php:108
+msgid "Connection type"
+msgstr "Jenis Koneksi"
+
+#: includes/class-wpr-shortcode.php:109
+msgid "Browser"
+msgstr "Peramban"
+
+#: includes/class-wpr-shortcode.php:110
+msgid "Time To First Byte"
+msgstr "Waktu untuk Byte Pertama"
+
+#: includes/class-wpr-shortcode.php:111
+msgid "Cache static content"
+msgstr "Cache konten statis"
+
+#: includes/class-wpr-shortcode.php:112
+msgid "Effective use of CDN"
+msgstr "Penggunaan CDN yang efektif"
+
+#: includes/class-wpr-shortcode.php:113
+msgid "Combine js and css files"
+msgstr "Kombinasi js dan file css"
+
+#: includes/class-wpr-shortcode.php:114
+msgid "Compress Images"
+msgstr "Kompres gambar"
+
+#: includes/class-wpr-shortcode.php:115
+msgid "No cookies on static content"
+msgstr "Tidak ada cookies pada konten statis"
+
+#: includes/class-wpr-shortcode.php:116
+msgid "Disable E-Tags"
+msgstr "Nonaktifkan E-Tags"
+
+#: includes/class-wpr-shortcode.php:117
+msgid "Compress Transfer"
+msgstr "Kompres transfer"
+
+#: includes/class-wpr-shortcode.php:118
+msgid "Keep-alive Enabled"
+msgstr "Tetap hidup diaktifkan"
+
+#: includes/class-wpr-shortcode.php:119
+msgid "Minify JavaScript"
+msgstr "Memperkecil JavaScript"
+
+#: includes/class-wpr-shortcode.php:120
+msgid "Progressive JPEGs"
+msgstr "Progresif JPEG"
+
+#: includes/class-wpr-shortcode.php:121
+msgid "Summary"
+msgstr "Ringkasan"
+
+#: includes/class-wpr-shortcode.php:122
+msgid "Displays screenshot of website that was rendered during first run"
+msgstr ""
+"Tampilkan tangkapan layar dari website yang dirender saat pertama kali "
+"dijalankan"
+
+#: includes/class-wpr-shortcode.php:123
+msgid "Performance grade"
+msgstr "Tingkat Kinerja"
+
+#: includes/class-wpr-shortcode.php:124
+msgid "Load time"
+msgstr "Waktu Memuat"
+
+#: includes/class-wpr-shortcode.php:125
+msgid "Page size"
+msgstr "Ukuran Halaman"
+
+#: includes/class-wpr-shortcode.php:126
+msgid "Requests"
+msgstr "Permintaan"
+
+#: includes/class-wpr-shortcode.php:127
+msgid "Tested from"
+msgstr "Dites dari"
+
+#: includes/class-wpr-shortcode.php:128
+msgid "Waterfall"
+msgstr "Waterfall"
+
+#: includes/class-wpr-shortcode.php:129
+msgid "Displays waterfall structure of files downloaded to load website"
+msgstr ""
+"Menampilkan struktur waterfall dari file yang diunduh untuk memuat website"
+
+#: includes/class-wpr-shortcode.php:130
+msgid "Image Preview"
+msgstr "Pratinjau Gambar"
+
+#: includes/class-wpr-shortcode.php:131
+msgid "The placeholder for zoomed in"
+msgstr "Tempat untuk diperbesar"
+
+#: includes/class-wpr-shortcode.php:132
+msgid "test might take up to 60 or more seconds after the end of the queue"
+msgstr "Tes membutuhkan waktu 60 detik atau lebih setelah akhir antrian"
+
+#: includes/class-wpr-shortcode.php:133
+#, php-format
+msgid "Test Started %d seconds ago"
+msgstr "Test dimulai % detik yang lalu"
+
+#: includes/class-wpr-shortcode.php:134
+#, php-format
+msgid "Waiting behind %d other tests..."
+msgstr "Menunggu dibelakang % tes lainnya..."
+
+#: includes/class-wpr-shortcode.php:135
+msgid "Waiting at the front of the queue..."
+msgstr "Menunggu didepan antrian..."
+
+#: includes/class-wpr-widget.php:29
+msgid "HR Speed Test demo widget."
+msgstr "Widget demo HR Speed Test"
+
+#. Name of the plugin
+#: includes/class-wpr-widget.php:32
+msgid "HR Speed Test"
+msgstr ""
+
+#: includes/class-wpr-widget.php:73
+msgid "Title:"
+msgstr ""
+
+#. Description of the plugin
+msgid "React boilerplate for WordPress plugins"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://hosting.review/webpage-speed-test/"
+msgstr ""
+
+#. Author of the plugin
+msgid "juslintek"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/juslintek"
+msgstr ""

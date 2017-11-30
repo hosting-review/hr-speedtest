@@ -1,6 +1,6 @@
 <?php
 
-class WPReactivate_REST_Controller {
+class HRSpeedTest_REST_Controller {
     /**
 	 * Instance of this class.
 	 *
@@ -51,7 +51,7 @@ class WPReactivate_REST_Controller {
      */
     public function register_routes() {
         $version = '1';
-        $namespace = 'wp-reactivate/v' . $version;
+        $namespace = 'hr-speedtest/v' . $version;
 
         register_rest_route( $namespace, '/settings/', array(
             array(
@@ -71,32 +71,140 @@ class WPReactivate_REST_Controller {
             ),
         ) );
 
+	    register_rest_route( $namespace, '/test/(?P<limit>\d+)', array(
+		    array(
+			    'methods'               => WP_REST_Server::READABLE,
+			    'callback'              => array( $this, 'get_recent' ),
+			    //'permission_callback'   => array( $this, 'setting_permissions_check' ),
+			    'args'                  => array(
+				    'limit' => array(
+					    'validate_callback' => 'is_numeric'
+				    ),
+			    ),
+		    ),
+	    ) );
+
+	    register_rest_route( $namespace, '/test', array(
+		    array(
+			    'methods'               => WP_REST_Server::READABLE,
+			    'callback'              => array( $this, 'get_recent' ),
+			    //'permission_callback'   => array( $this, 'setting_permissions_check' ),
+			    'args'                  => array(
+				    'limit' => array(
+					    'validate_callback' => 'is_numeric'
+				    ),
+			    ),
+		    ),
+	    ) );
+
+	    register_rest_route( $namespace, '/test/', array(
+		    array(
+			    'methods'               => WP_REST_Server::CREATABLE,
+			    'callback'              => array( $this, 'add_recent' ),
+			    //'permission_callback'   => array( $this, 'setting_permissions_check' ),
+			    'args'                  => array(),
+		    ),
+	    ) );
+
     }
 
     /**
-     * Get Settings
-     *
-     * @param WP_REST_Request $request Full data about the request.
-     * @return WP_Error|WP_REST_Request
-     */
-    public function get_settings( $request ) {
-        $data = array(
-            'wpreactivate' => get_option('wpreactivate'),
-        );
+	 * Get Settings
+	 *
+	 * @param WP_REST_Request $request Full data about the request.
+	 * @return WP_Error|WP_REST_Request
+	 */
+	public function get_settings( $request ) {
+		global $wpdb;
 
-        return new WP_REST_Response( $data, 200 );
-    }
-    
-    /**
-     * Update Settings
-     *
-     * @param WP_REST_Request $request Full data about the request.
-     * @return WP_Error|WP_REST_Request
-     */
-    public function update_settings( $request ) {
-        update_option('wpreactivate', $request->get_param('wpreactivate'));
-        return new WP_REST_Response( true, 200 );
-    }
+		$data = array(
+			'hrspeedtest' => get_option('hrspeedtest'),
+		);
+
+		return new WP_REST_Response( $data, 200 );
+	}
+
+	/**
+	 * Update Settings
+	 *
+	 * @param WP_REST_Request $request Full data about the request.
+	 * @return WP_Error|WP_REST_Request
+	 */
+	public function update_settings( $request ) {
+		update_option('hrspeedtest', $request->get_param('hrspeedtest'));
+		return new WP_REST_Response( true, 200 );
+	}
+
+	/**
+	 * Get Recent
+	 *
+	 * @param WP_REST_Request $request Full data about the request.
+	 * @return WP_Error|WP_REST_Request
+	 */
+	public function get_recent( $request ) {
+		global $wpdb;
+		$limit = $request->get_param('limit');
+		$query = 'SELECT * FROM `'. $wpdb->prefix .'speed_tests` ORDER BY `updated` DESC';
+		if(!empty($limit)){
+			$query = $wpdb->prepare('SELECT * FROM `'. $wpdb->prefix .'speed_tests` ORDER BY `updated` DESC LIMIT %d', $limit);
+		}
+
+		$results = [];
+		foreach ($wpdb->get_results($query, ARRAY_A) as $key => $result) {
+			$results[$key] = $result;
+			$datetime_now = new DateTime("now");
+			$datetime_created = new DateTime($result['created']);
+
+			$interval = $datetime_now->getTimestamp() - $datetime_created->getTimestamp();
+
+			$results[$key]['serverAgoInSeconds'] = $interval;
+		}
+
+		$data = array(
+			'hrspeedtest' => get_option('hrspeedtest'),
+			'recent' => $results
+		);
+
+		return new WP_REST_Response( $data, 200 );
+	}
+
+	/**
+	 * Add Recent
+	 *
+	 * @param WP_REST_Request $request Full data about the request.
+	 * @return WP_Error|WP_REST_Request
+	 */
+	public function add_recent( $request ) {
+		global $wpdb;
+
+		$results = $request->get_body();
+		$ip = $request->get_header('x_real_ip');
+		$url = $request->get_json_params()['websiteUrl'];
+		$user_time_created = $request->get_json_params()['user_time_created'];
+		$timezone = $request->get_json_params()['timezone'];
+
+		try {
+			$wpdb->insert( $wpdb->prefix . 'speed_tests', [
+				'url'     => $url,
+				'ip'      => $ip,
+				'results' => $results,
+				'user_time_created' => $user_time_created,
+				'user_time_zone' => $timezone,
+				'created' => date('Y-m-d H:i:s')
+			], [
+				'%s',
+				'%s',
+				'%s',
+				'%s',
+				'%s',
+				'%s'
+			] );
+		} catch (Exception $e){
+			return new WP_REST_Response( $e, 417 );
+		}
+
+		return new WP_REST_Response( true, 200 );
+	}
 
     /**
      * Check if a given request has access to update a setting
@@ -107,4 +215,14 @@ class WPReactivate_REST_Controller {
     public function setting_permissions_check( $request ) {
         return current_user_can( 'manage_options' );
     }
+
+	/**
+	 * Check if a given request has access to update a setting
+	 *
+	 * @param WP_REST_Request $request Full data about the request.
+	 * @return WP_Error|bool
+	 */
+	public function test_permissions_check( $request ) {
+		return current_user_can( 'read' );
+	}
 }

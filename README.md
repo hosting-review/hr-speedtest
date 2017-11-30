@@ -114,7 +114,7 @@ We set ```'show_in_rest'``` to ```true``` when registering our setting in order 
 *includes/class-wpr-admin.php*
 ```php =187
 public function register_settings() {
-    register_setting( 'general', 'wpreactivate', array(
+    register_setting( 'general', 'hrspeedtest', array(
         'show_in_rest' 	=> true,
         'type'			=> 'string',
         'description'	=> __( 'WP Reactivate Settings', $this->plugin_slug )
@@ -139,7 +139,7 @@ getSetting = () => {
     })
     .then(response => response.json())
     .then(
-        (json) => this.setState({ settings: json.wpreactivate }),
+        (json) => this.setState({ settings: json.hrspeedtest }),
         (err) => console.log('error', err)
     );
 };

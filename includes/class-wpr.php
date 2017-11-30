@@ -13,7 +13,7 @@
 /**
  * @package WP-Reactivate
  */
-class WPReactivate {
+class HRSpeedTest {
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -24,7 +24,7 @@ class WPReactivate {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'wp-reactivate';
+	protected $plugin_slug = 'hr-speedtest';
 
 	/**
 	 * Instance of this class.
@@ -41,7 +41,7 @@ class WPReactivate {
 	 * @since     0.8.0
 	 */
 	private function __construct() {
-		$this->plugin_version = WP_REACTIVATE_VERSION;
+		$this->plugin_version = HR_SPEEDTEST_VERSION;
 	}
 
 	/**
@@ -55,7 +55,7 @@ class WPReactivate {
 		return $this->plugin_slug;
 	}
 
-		/**
+	/**
 	 * Return the plugin version.
 	 *
 	 * @since    0.8.0
@@ -72,7 +72,7 @@ class WPReactivate {
 	 * @since    0.8.0
 	 */
 	public static function activate() {
-		update_option( 'wpreactivate', 'Test Value' );
+		update_option( 'hrspeedtest', 'Test Value' );
 	}
 
 	/**
@@ -91,11 +91,11 @@ class WPReactivate {
 	 *
 	 * @return    object    A single instance of this class.
 	 */
-	public static function get_instance() {
+	public static function get_instance( $params = null ) {
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self( $params );
 		}
 
 		return self::$instance;

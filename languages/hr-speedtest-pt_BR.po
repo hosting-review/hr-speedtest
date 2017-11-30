@@ -1,0 +1,215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HR Speed Test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-22 18:11+0000\n"
+"PO-Revision-Date: 2017-11-22 18:12+0000\n"
+"Last-Translator: José Júnior <jose@hostinger.com>\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt-BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: includes/class-wpr-widget.php:29
+msgid "HR Speed Test demo widget."
+msgstr "HR Speed Test demo widget."
+
+#. Name of the plugin
+#: includes/class-wpr-widget.php:32
+msgid "HR Speed Test"
+msgstr "HR Speed Test"
+
+#: includes/class-wpr-widget.php:73
+msgid "Title:"
+msgstr "Título"
+
+#. Description of the plugin
+msgid "React boilerplate for WordPress plugins"
+msgstr "React boilerplate for WordPress plugins"
+
+#. URI of the plugin
+msgid "https://hosting.review/webpage-speed-test/"
+msgstr "https://melhorhospedagemdesites.com/testar-velocidade-do-site/"
+
+#. Author of the plugin
+msgid "juslintek"
+msgstr "juslintek"
+
+#. Author URI of the plugin
+msgid "https://github.com/juslintek"
+msgstr "https://github.com/juslintek"
+
+#: includes/class-wpr-shortcode.php:94
+msgid "Recent Tests"
+msgstr "Testes Recentes"
+
+#: includes/class-wpr-shortcode.php:95
+msgid "months"
+msgstr "meses"
+
+#: includes/class-wpr-shortcode.php:96
+msgid "days"
+msgstr "dias"
+
+#: includes/class-wpr-shortcode.php:97
+msgid "hours"
+msgstr "horas"
+
+#: includes/class-wpr-shortcode.php:98
+msgid "minutes"
+msgstr "minutos"
+
+#: includes/class-wpr-shortcode.php:99
+msgid "seconds"
+msgstr "segundos"
+
+#: includes/class-wpr-shortcode.php:100
+msgid "URL is not fully qualified domain name"
+msgstr "URL não é um nome de domínio completamente qualificado"
+
+#: includes/class-wpr-shortcode.php:101
+msgid "URL is required"
+msgstr "URL é requerido"
+
+#: includes/class-wpr-shortcode.php:102
+msgid "Enter a Website URL"
+msgstr "Insira o URL de um site"
+
+#: includes/class-wpr-shortcode.php:103
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: includes/class-wpr-shortcode.php:104
+msgid "Check"
+msgstr "Verificar"
+
+#: includes/class-wpr-shortcode.php:105
+msgid "Click to see website"
+msgstr "Clique para ver o site"
+
+#: includes/class-wpr-shortcode.php:106
+msgid "ago"
+msgstr "atrás"
+
+#: includes/class-wpr-shortcode.php:107
+msgid "Test from"
+msgstr "Teste de"
+
+#: includes/class-wpr-shortcode.php:108
+msgid "Connection type"
+msgstr "Tipo de conexão"
+
+#: includes/class-wpr-shortcode.php:109
+msgid "Browser"
+msgstr "Navegador"
+
+#: includes/class-wpr-shortcode.php:110
+msgid "Time To First Byte"
+msgstr "Tempo para o primeiro Byte"
+
+#: includes/class-wpr-shortcode.php:111
+msgid "Cache static content"
+msgstr "Conteúdo estático em cache"
+
+#: includes/class-wpr-shortcode.php:112
+msgid "Effective use of CDN"
+msgstr "Uso efetivo de CDN"
+
+#: includes/class-wpr-shortcode.php:113
+msgid "Combine js and css files"
+msgstr "Combinar arquivos JS e CSS"
+
+#: includes/class-wpr-shortcode.php:114
+msgid "Compress Images"
+msgstr "Compactar imagens"
+
+#: includes/class-wpr-shortcode.php:115
+msgid "No cookies on static content"
+msgstr "Sem cookies no conteúdo estático"
+
+#: includes/class-wpr-shortcode.php:116
+msgid "Disable E-Tags"
+msgstr "Desabilitar E-Tags"
+
+#: includes/class-wpr-shortcode.php:117
+msgid "Compress Transfer"
+msgstr "Compactar Transferência"
+
+#: includes/class-wpr-shortcode.php:118
+msgid "Keep-alive Enabled"
+msgstr "Manter-vivo habilitado"
+
+#: includes/class-wpr-shortcode.php:119
+msgid "Minify JavaScript"
+msgstr "Minificar JavaScript"
+
+#: includes/class-wpr-shortcode.php:120
+msgid "Progressive JPEGs"
+msgstr "JPEGs progressivos"
+
+#: includes/class-wpr-shortcode.php:121
+msgid "Summary"
+msgstr "Resumo"
+
+#: includes/class-wpr-shortcode.php:122
+msgid "Displays screenshot of website that was rendered during first run"
+msgstr ""
+"Mostra uma captura de tela do site que foi renderizado na primeira execução"
+
+#: includes/class-wpr-shortcode.php:123
+msgid "Performance grade"
+msgstr "Nota da perfromance"
+
+#: includes/class-wpr-shortcode.php:124
+msgid "Load time"
+msgstr "Tempo de carregamento"
+
+#: includes/class-wpr-shortcode.php:125
+msgid "Page size"
+msgstr "Tamanho da página"
+
+#: includes/class-wpr-shortcode.php:126
+msgid "Requests"
+msgstr "Requisiçõe"
+
+#: includes/class-wpr-shortcode.php:127
+msgid "Tested from"
+msgstr "Testado de"
+
+#: includes/class-wpr-shortcode.php:128
+msgid "Waterfall"
+msgstr "Gráfico"
+
+#: includes/class-wpr-shortcode.php:129
+msgid "Displays waterfall structure of files downloaded to load website"
+msgstr ""
+"Mostra o gráfico com a estrutura dos arquivos baixados para carregar o site"
+
+#: includes/class-wpr-shortcode.php:130
+msgid "Image Preview"
+msgstr "Prévia da Imagem"
+
+#: includes/class-wpr-shortcode.php:131
+msgid "The placeholder for zoomed in"
+msgstr "O placeholder para ampliação"
+
+#: includes/class-wpr-shortcode.php:132
+msgid "test might take up to 60 or more seconds after the end of the queue"
+msgstr "o teste pode levar mais de 60 segundos após o fim da fila"
+
+#: includes/class-wpr-shortcode.php:133
+#, php-format
+msgid "Test Started %d seconds ago"
+msgstr "O teste começou há %d segundos"
+
+#: includes/class-wpr-shortcode.php:134
+#, php-format
+msgid "Waiting behind %d other tests..."
+msgstr "Esperando por %d outros testes..."
+
+#: includes/class-wpr-shortcode.php:135
+msgid "Waiting at the front of the queue..."
+msgstr "Esperando como o primeiro da fila"
